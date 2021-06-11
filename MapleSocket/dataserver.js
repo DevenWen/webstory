@@ -51,9 +51,9 @@ var server = http.createServer(function(req, res) {
       'Content-Type' : 'application/json'
     });
     try {
-      if (fs.statSync(filePath + '.json').isFile() && false) {
+      if (fs.statSync(filePath).isFile()) {
         console.log('Responding with JSON');
-        fs.readFile(filePath + '.json', function(err, data) {
+        fs.readFile(filePath, function(err, data) {
           res.end(data);
         });
         return;
@@ -61,10 +61,10 @@ var server = http.createServer(function(req, res) {
     } catch (ex) {
     }
 
-    xmlparser.getJson(filePath, function(data) {
-      console.log('Got contents for ' + filePath)
-      res.end(data);
-    }, true);
+    // xmlparser.getJson(filePath, function(data) {
+    //   console.log('Got contents for ' + filePath)
+    //   res.end(data);
+    // }, true);
     /*
      * var readStream = fs.createReadStream(filePath); readStream.pipe(res);
      */

@@ -109,6 +109,7 @@ module.exports.getJson = function(file, callback, returnText) {
   fs.readFile(file, {
     encoding : 'utf8'
   }, function(err, data) {
+    console.log("file " + file)
     var xmlDoc = libxmljs.parseXml(data.trim());
 
     var root = xmlDoc.root();

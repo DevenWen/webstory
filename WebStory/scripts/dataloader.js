@@ -215,7 +215,7 @@
       };
 
       var xhttp = new XMLHttpRequest();
-      var url = 'http://127.0.0.1:8081/' + path + '.xml';
+      var url = 'http://127.0.0.1:8081/' + path + '.xml.json';
       console.log(url);
       xhttp.open("GET", url, sync !== true);
       xhttp.onreadystatechange = function() {
